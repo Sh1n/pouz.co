@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="asset/app-icon.png" type="image/x-icon" /> 
+<link rel="shortcut icon" href="asset/app-icon.png" type="image/x-icon" />
+  <title>Pouz</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #e74b3c;
+      min-height: 100vh;
+      min-width: 986px;
+      flex-direction: column;
+      font-family: "Helvetica Neue", arial;
+      font-weight: bold;
+      padding-bottom: 30%;
+      color: white;
+    }
+
+    header {
+      position: absolute;
+      display: none;
+    }
+
+    footer {
+      position: fixed;
+      height: 30%;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      min-height: 150px;
+      padding: 0 5% 0 5%;
+      vertical-align: bottom;
+    }
+
+    footer div {
+      position: absolute;
+      width: 90%;
+      top: 35%;
+    }
+
+    footer button {
+      width: 250px;
+      height: auto;
+      border: none;
+      background: none;
+      margin-right: 60px;
+      outline: none;
+      cursor: pointer;
+      bottom: 50px;
+    }
+
+    footer button img {
+      width: 100%;
+      height: auto;
+      border: none;
+    }
+
+    main {
+      width: 40%;
+      margin: 100px 5%;
+    }
+
+    main img {
+      width: 80%;
+      height: auto;
+    }
+
+    aside {
+      position: absolute;
+      width: 25%;
+      bottom: -20px;
+      right: 5%;
+    }
+
+    aside img {
+      width: 80%;
+      height: auto;
+    }
+
+    aside .screen {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    p.right{
+      text-align: right;
+      font-size: 60px;
+      margin: 10px;
+    }
+
+    p{
+      font-size: 24px;
+      margin-top: 50px;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- <header><img src="holder.js/300x200"></header> -->
+
+  <main>
+    <img src="asset/pouz-logo-white-tagline.png" class="logo">
+    
+    <p>Delivering happiness. Pouz is your new best friend. It will interrupt you randomly, forcing you to take a "pouz" that is good for you. This way, you will find the perfet lifework balance.</p>
+  </main>
+
+  <footer>
+    <div>
+      <button><img src="asset/ios.png" alt="app store"></button>
+      <button><img src="asset/android.png" alt="google play"></button>
+      <aside>
+        <img src="asset/iphone-pouz.png">
+        <img class="screen" src="asset/pouz-1.png">
+        <img class="screen" src="asset/pouz-2.png">
+      </aside>
+    </div>
+  </footer>
+  <script src="holder.js"></script>
+  <script src="jquery.js"></script>
+  <script>
+  $(function(){
+    var images = ['asset/pouz-1.png', 'asset/pouz-2.png']
+      , i      = 1
+
+    setInterval(function(){
+      i++;
+      $('aside .screen').fadeOut('slow',function(){ 
+        $(this).attr('src', images[i % images.length]);
+        $(this).fadeIn(2000);
+      }); 
+    }, 5000)
+
+
+
+  })
+  </script>
+</body>
+</html>
